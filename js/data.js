@@ -14,7 +14,7 @@ const PORTFOLIO_DATA = {
     location: "Bhavnagar, Gujarat, India",
     github: "https://github.com/DarshAndharia",
     linkedin: "https://www.linkedin.com/in/darsh-bhavik-andharia/",
-    profileImage: "images/profile/photo.JPG",  // Replace with your photo
+    profileImage: "images/profile/photo.jpg",  // Replace with your photo
     stats: {
       projects: "10+",
       internships: "4+",

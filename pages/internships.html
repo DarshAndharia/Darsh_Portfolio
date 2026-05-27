@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internships | Darsh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html" id="nav-brand">Darsh<span>Andharia</span>.</a>
+    <div class="d-flex align-items-center gap-3 order-lg-last">
+      <div class="theme-toggle" id="themeToggle"><span class="toggle-icon" id="toggleIcon">🌙</span><div class="toggle-switch"></div></div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto gap-1 py-2 py-lg-0">
+        <li class="nav-item"><a class="nav-link" href="../index.html#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link active-section" href="../index.html#internships">Internships</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#achievements">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="detail-hero page-offset">
+  <div class="container">
+    <a href="../index.html#internships" class="back-link"><i class="bi bi-arrow-left"></i> Back to Home</a>
+    <span class="section-label">Work Experience</span>
+    <h1 class="detail-title">Internships</h1>
+    <div class="section-divider"></div>
+    <p class="section-subtitle" style="max-width:560px;">Hands-on industry experience that sharpened my skills and expanded my professional network.</p>
+  </div>
+</div>
+
+<div class="detail-content">
+  <div class="container">
+    <div id="internships-detail-list"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand" id="footer-brand">Darsh<span>Andharia</span>.</div>
+    <div class="footer-social" id="footer-social"></div>
+    <p class="footer-text">Crafted by Darsh &nbsp;·&nbsp; <span id="current-year"></span></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let D;
+  try {
+    D = PORTFOLIO_DATA;
+  } catch (e) {
+    console.error("Global portfolio contexts not loaded directly:", e);
+  }
+
+  if (!D) {
+    console.error("Could not find PORTFOLIO_DATA. Check path configuration to your data.js file.");
+    document.getElementById('internships-detail-list').innerHTML = `
+      <div class="text-center py-5">
+        <i class="bi bi-exclamation-octagon text-danger" style="font-size: 3rem;"></i>
+        <p class="mt-3 text-secondary">Unable to load experience files. Please verify data script assets.</p>
+      </div>`;
+    return;
+  }
+
+  document.getElementById('nav-brand').innerHTML = `${D.personal.firstName}<span>${D.personal.lastName}</span>.`;
+  document.getElementById('footer-brand').innerHTML = `${D.personal.firstName}<span>${D.personal.lastName}</span>.`;
+
+  const list = document.getElementById('internships-detail-list');
+  list.innerHTML = '';
+
+  D.internships.forEach((int, i) => {
+    const techTags = int.tech && int.tech.length > 0
+      ? int.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')
+      : '';
+
+    const respItems = int.responsibilities && int.responsibilities.length > 0
+      ? int.responsibilities.map(r => `<li style="margin-bottom:8px;font-size:0.9rem;">${r}</li>`).join('')
+      : '';
+
+    list.innerHTML += `
+      <div id="${int.id}" class="row g-5 mb-5 pb-5 ${i < D.internships.length - 1 ? 'border-bottom' : ''}" style="border-color:var(--border)!important;">
+        <div class="col-lg-7 reveal visible">
+          ${int.image
+            ? `<div class="detail-image-main" style="
+                  height: 520px; 
+                  max-width: 100%; 
+                  width: max-content;
+                  margin: 0 auto 24px auto; 
+                  border-radius: 16px; 
+                  overflow: hidden; 
+                  border: 1px solid var(--border); 
+                  box-shadow: var(--shadow-lg);
+                  background: transparent;
+                ">
+                  <img src="../${int.image}" alt="${int.title}" style="height: 100%; width: auto; object-fit: contain; display: block;" />
+                </div>`
+            : `<div class="detail-image-main"><div class="detail-image-placeholder"><i class="bi bi-building"></i><p>Upload internship photo / certificate image</p></div></div>`}
+          
+          ${techTags ? `<h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin:20px 0 14px;color:var(--text-primary);">Technologies Used</h4><div class="mb-3">${techTags}</div>` : ''}
+          
+          ${respItems ? `<h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin:24px 0 14px;color:var(--text-primary);">Key Responsibilities</h4><ul style="padding-left:20px;color:var(--text-secondary);">${respItems}</ul>` : ''}
+          
+          ${int.certificate ? `<div style="margin-top:20px;"><a href="../${int.image}" target="_blank" class="btn-primary-custom"><i class="bi bi-patch-check"></i> View Certificate</a></div>` : ''}
+        </div>
+        <div class="col-lg-5 reveal visible">
+          <span class="detail-badge">${int.type}</span>
+          <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:8px;letter-spacing:-0.02em;color:var(--text-primary);">${int.title}</h2>
+          <p style="color:var(--accent);font-weight:600;margin-bottom:6px;font-size:1.05rem;"><i class="bi bi-building"></i> ${int.company}</p>
+          <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:20px;"><i class="bi bi-geo-alt"></i> ${int.location}</p>
+          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:24px;">${int.description}</p>
+          <div class="info-box"><div class="info-box-label">Duration</div><div class="info-box-value">${int.duration}</div></div>
+          <div class="info-box"><div class="info-box-label">Company</div><div class="info-box-value">${int.company}</div></div>
+          <div class="info-box"><div class="info-box-label">Location</div><div class="info-box-value">${int.location}</div></div>
+          <div class="info-box"><div class="info-box-label">Type</div><div class="info-box-value">${int.type}</div></div>
+        </div>
+      </div>`;
+  });
+
+  const socialHtml = `
+    <a href="${D.personal.github}" target="_blank" class="social-btn"><i class="bi bi-github"></i></a>
+    <a href="${D.personal.linkedin}" target="_blank" class="social-btn"><i class="bi bi-linkedin"></i></a>`;
+  document.getElementById('footer-social').innerHTML = socialHtml;
+});
+</script>
+</body>
+</html>

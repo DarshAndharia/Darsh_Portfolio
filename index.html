@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio – Education, Internships, Projects & Achievements" />
+  <title>Darsh's Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span id="nav-fname">Darsh</span>Andharia<span>.</span>
+    </a>
+
+    <div class="d-flex align-items-center gap-3 order-lg-last">
+      <div class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <span class="toggle-icon" id="toggleIcon">🌙</span>
+        <div class="toggle-switch"></div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto gap-1 py-2 py-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#hero" data-section="hero">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#education" data-section="education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#internships" data-section="internships">Internships</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects" data-section="projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#achievements" data-section="achievements">Achievements</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#resume" data-section="resume">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact" data-section="contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="hero" class="page-offset">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 order-2 order-lg-1">
+        <p class="hero-greeting animate-fade-in">👋 Hello, I'm</p>
+        <h1 class="hero-name animate-fade-in delay-1">
+          <span id="hero-firstname">Darsh</span><br />Andharia<span>.</span>
+        </h1>
+        <p class="hero-tagline animate-fade-in delay-2">
+          <span id="typed-role" data-roles="Software Developer,Problem Solver,Tech Enthusiast"></span>
+          <span class="typed-cursor">|</span>
+        </p>
+        <p class="hero-tagline animate-fade-in delay-2" id="hero-tagline" style="font-size:1rem; margin-bottom: 32px;"></p>
+
+        <div class="hero-cta-group animate-fade-in delay-3">
+          <a href="#projects" class="btn-primary-custom">
+            <i class="bi bi-grid-1x2"></i> View Projects
+          </a>
+          <a href="resume/resume.pdf" target="_blank" class="btn-outline-custom">
+            <i class="bi bi-file-earmark-person"></i> My Resume
+          </a>
+          <a href="#contact" class="btn-outline-custom">
+            <i class="bi bi-envelope"></i> Contact Me
+          </a>
+        </div>
+
+        <div class="hero-stats animate-fade-in delay-4" id="hero-stats">
+          </div>
+      </div>
+
+      <div class="col-lg-6 order-1 order-lg-2">
+        <div class="hero-image-wrapper">
+          <div class="hero-image-frame" id="hero-img-frame">
+            </div>
+          <div class="hero-image-badge">
+            D2D Student &nbsp;<span>🎓</span>&nbsp; Open to Internships <span>🟢</span>
+          </div>
+          <div class="hero-contact-pills" id="hero-pills">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section section-alt">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <span class="section-label">Academic Background</span>
+        <h2 class="section-title">Education</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">My academic journey that shaped my technical foundation.</p>
+      </div>
+      <div class="col-lg-5 d-flex align-items-end justify-content-lg-end mt-3 mt-lg-0">
+        <a href="pages/education.html" class="btn-view-all">
+          View Full Details <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="timeline reveal" id="education-timeline">
+      </div>
+  </div>
+</section>
+
+<section id="internships" class="section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <span class="section-label">Work Experience</span>
+        <h2 class="section-title">Internships</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Real-world experience across different domains and technologies.</p>
+      </div>
+      <div class="col-lg-5 d-flex align-items-end justify-content-lg-end mt-3 mt-lg-0">
+        <a href="pages/internships.html" class="btn-view-all">
+          View All Internships <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="row g-4" id="internships-grid">
+      </div>
+  </div>
+</section>
+
+<section id="projects" class="section section-alt">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <span class="section-label">My Work</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Things I've built — from ideas to working products.</p>
+      </div>
+      <div class="col-lg-5 d-flex align-items-end justify-content-lg-end mt-3 mt-lg-0">
+        <a href="pages/projects.html" class="btn-view-all">
+          View All Projects <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="row g-4" id="projects-grid">
+      </div>
+  </div>
+</section>
+
+<section id="achievements" class="section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <span class="section-label">Milestones</span>
+        <h2 class="section-title">Achievements</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Recognition, awards, and milestones along the journey.</p>
+      </div>
+      <div class="col-lg-5 d-flex align-items-end justify-content-lg-end mt-3 mt-lg-0">
+        <a href="pages/achievements.html" class="btn-view-all">
+          View All Achievements <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    <div class="row g-4" id="achievements-grid">
+      </div>
+  </div>
+</section>
+
+<section id="resume" class="section section-alt">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center mb-5">
+        <span class="section-label">My Resume</span>
+        <h2 class="section-title">Download / View Resume</h2>
+        <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle mx-auto">My full resume with skills, experience, education and contact info.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="resume-card reveal">
+          <div class="resume-icon"><i class="bi bi-file-earmark-person"></i></div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:8px;" id="resume-name">Darsh Andharia</h3>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;" id="resume-role">D2D Student & Developer</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="resume/resume.pdf" target="_blank" class="btn-primary-custom">
+              <i class="bi bi-eye"></i> View Resume
+            </a>
+            <a href="resume/resume.pdf" download class="btn-outline-custom">
+              <i class="bi bi-download"></i> Download PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">
+          Feel free to reach out for collaboration, internship opportunities, or just a friendly chat!
+        </p>
+      </div>
+      <div class="col-lg-7">
+        <div id="contact-list">
+          </div>
+        <div class="footer-social mt-4" id="social-links">
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand" id="footer-brand">Darsh<span>Andharia</span>.</div>
+    <div class="footer-social" id="footer-social"></div>
+    <p class="footer-text">
+      Crafted by Darsh &nbsp;·&nbsp; <span id="current-year"></span>
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ---- Populate dynamic content from PORTFOLIO_DATA ---- */
+document.addEventListener('DOMContentLoaded', () => {
+  const D = PORTFOLIO_DATA;
+  if (!D) return;
+
+  /* NAV brand */
+  try {
+    document.getElementById('nav-fname').textContent = D.personal.firstName;
+    document.getElementById('hero-firstname').textContent = D.personal.firstName;
+    document.getElementById('typed-role').setAttribute('data-roles', D.personal.typedRoles);
+    document.getElementById('hero-tagline').textContent = D.personal.tagline;
+  } catch(e) { console.error("Error loading brand strings:", e); }
+
+  /* Hero stats */
+  try {
+    const statsHtml = `
+      <div class="me-4">
+        <div class="hero-stat-number">${D.personal.stats.projects}</div>
+        <div class="hero-stat-label">Projects</div>
+      </div>
+      <div class="me-4">
+        <div class="hero-stat-number">${D.personal.stats.internships}</div>
+        <div class="hero-stat-label">Internships</div>
+      </div>
+      <div>
+        <div class="hero-stat-number">${D.personal.stats.achievements}</div>
+        <div class="hero-stat-label">Achievements</div>
+      </div>`;
+    document.getElementById('hero-stats').innerHTML = statsHtml;
+  } catch(e) { console.error("Error loading stats counters:", e); }
+
+  /* Hero image */
+  try {
+    const imgFrame = document.getElementById('hero-img-frame');
+    imgFrame.innerHTML = D.personal.profileImage
+      ? `<img src="${D.personal.profileImage}" alt="Profile Photo" />`
+      : `<div class="hero-image-placeholder"><i class="bi bi-person-circle"></i><span>Upload profile photo</span></div>`;
+  } catch(e) { console.error("Error setting up hero frame:", e); }
+
+  /* Hero contact pills */
+  try {
+    document.getElementById('hero-pills').innerHTML = `
+      <div class="contact-pill"><i class="bi bi-envelope"></i>${D.personal.email}</div>
+      <div class="contact-pill"><i class="bi bi-geo-alt"></i>${D.personal.location}</div>`;
+  } catch(e) { console.error("Error loading info badges:", e); }
+
+  /* EDUCATION TIMELINE */
+  try {
+    const timeline = document.getElementById('education-timeline');
+    timeline.innerHTML = '';
+    D.education.slice(0,2).forEach(edu => {
+      timeline.innerHTML += `
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year"><i class="bi bi-calendar3"></i> ${edu.year}</div>
+          <div class="timeline-degree">${edu.degree}</div>
+          <div class="timeline-school"><i class="bi bi-building"></i> ${edu.school} &bull; ${edu.location}</div>
+          <p style="font-size:0.88rem;color:var(--text-secondary);margin-bottom:12px;">${edu.description}</p>
+          <span class="timeline-grade"><i class="bi bi-award"></i> ${edu.grade}</span>
+        </div>`;
+    });
+  } catch(e) { console.error("Error processing education row markup:", e); }
+
+  /* INTERNSHIPS GRID */
+  try {
+    const intGrid = document.getElementById('internships-grid');
+    intGrid.innerHTML = '';
+    D.internships.slice(0,2).forEach(int => {
+      const techTags = int.tech && int.tech.length > 0 
+        ? int.tech.map(t => `<span class="tech-tag">${t}</span>`).join('') 
+        : '';
+
+      intGrid.innerHTML += `
+        <div class="col-md-6 reveal visible">
+          <div class="portfolio-card">
+            <div class="card-img-wrapper">
+              ${int.image
+                ? `<img src="${int.image}" alt="${int.title}" />`
+                : `<div class="card-img-placeholder"><i class="bi bi-building"></i><span>${int.company}</span></div>`}
+            </div>
+            <div class="card-body-custom">
+              <span class="card-tag">${int.type}</span>
+              <div class="card-title-custom">${int.title}</div>
+              <div class="card-meta"><i class="bi bi-building"></i>${int.company} &bull; ${int.duration}</div>
+              <p class="card-text-custom">${int.description}</p>
+              <div class="mb-3">${techTags}</div>
+              <a href="pages/internships.html#${int.id}" class="btn-card">View Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>`;
+    });
+  } catch(e) { console.error("Error loading internship overview items:", e); }
+
+  /* PROJECTS GRID */
+  try {
+    const projGrid = document.getElementById('projects-grid');
+    projGrid.innerHTML = '';
+    D.projects.filter(p=>p.featured).slice(0,3).forEach(proj => {
+      const techTags = proj.tech && proj.tech.length > 0 
+        ? proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('') 
+        : '';
+
+      projGrid.innerHTML += `
+        <div class="col-md-6 col-lg-4 reveal visible">
+          <div class="portfolio-card">
+            <div class="card-img-wrapper">
+              ${proj.image
+                ? `<img src="${proj.image}" alt="${proj.title}" />`
+                : `<div class="card-img-placeholder"><i class="bi bi-code-slash"></i><span>${proj.category}</span></div>`}
+            </div>
+            <div class="card-body-custom">
+              <span class="card-tag">${proj.category}</span>
+              <div class="card-title-custom">${proj.title}</div>
+              <p class="card-text-custom">${proj.description}</p>
+              <div class="mb-3">${techTags}</div>
+              <div class="d-flex gap-3 flex-wrap">
+                ${proj.github ? `<a href="${proj.github}" target="_blank" class="btn-card"><i class="bi bi-github"></i> GitHub</a>` : ''}
+                ${proj.live ? `<a href="${proj.live}" target="_blank" class="btn-card"><i class="bi bi-box-arrow-up-right"></i> Live</a>` : ''}
+                <a href="pages/projects.html#${proj.id}" class="btn-card">Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>`;
+    });
+  } catch(e) { console.error("Error rendering project grid layout:", e); }
+
+  /* ACHIEVEMENTS GRID */
+  try {
+    const achGrid = document.getElementById('achievements-grid');
+    achGrid.innerHTML = '';
+    D.achievements.slice(0,3).forEach(ach => {
+      achGrid.innerHTML += `
+        <div class="col-md-6 col-lg-4 reveal visible">
+          <div class="achievement-card">
+            ${ach.image
+              ? `<div class="achievement-img-wrapper"><img src="${ach.image}" alt="${ach.title}" /></div>`
+              : `<div class="achievement-icon">${ach.icon}</div>`}
+            <span class="card-tag">${ach.category}</span>
+            <div class="card-title-custom" style="text-align:center;">${ach.title}</div>
+            <div class="card-meta" style="justify-content:center;"><i class="bi bi-building"></i>${ach.issuer} &bull; ${ach.date}</div>
+            <p class="card-text-custom" style="-webkit-line-clamp:2;">${ach.description}</p>
+            <a href="pages/achievements.html#${ach.id}" class="btn-card" style="justify-content:center;">View Details <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>`;
+    });
+  } catch(e) { console.error("Error processing honors components:", e); }
+
+  /* RESUME */
+  try {
+    document.getElementById('resume-name').textContent = D.personal.name;
+    document.getElementById('resume-role').textContent = D.personal.role;
+  } catch(e) { console.error("Error parsing resume labels:", e); }
+
+  /* CONTACT */
+  try {
+    document.getElementById('contact-list').innerHTML = `
+      <a href="mailto:${D.personal.email}" class="contact-item">
+        <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+        <div><div class="contact-label">Email</div><div class="contact-value">${D.personal.email}</div></div>
+      </a>
+      <a href="tel:${D.personal.phone}" class="contact-item">
+        <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+        <div><div class="contact-label">Phone</div><div class="contact-value">${D.personal.phone}</div></div>
+      </a>
+      <div class="contact-item" style="cursor:default;">
+        <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+        <div><div class="contact-label">Location</div><div class="contact-value">${D.personal.location}</div></div>
+      </div>`;
+
+    const socialHtml = `
+      <a href="${D.personal.github}" target="_blank" class="social-btn"><i class="bi bi-github"></i></a>
+      <a href="${D.personal.linkedin}" target="_blank" class="social-btn"><i class="bi bi-linkedin"></i></a>`;
+
+    document.getElementById('social-links').innerHTML = socialHtml;
+    document.getElementById('footer-social').innerHTML = socialHtml;
+    document.getElementById('footer-brand').innerHTML = `${D.personal.firstName}<span>${D.personal.lastName}</span>.`;
+  } catch(e) { console.error("Error initializing footer links:", e); }
+});
+</script>
+
+<style>
+.typed-cursor{animation:blink 1s step-start infinite;color:var(--accent);}
+@keyframes blink{50%{opacity:0;}}
+</style>
+
+</body>
+</html>

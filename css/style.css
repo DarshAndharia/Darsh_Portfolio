@@ -789,7 +789,7 @@ footer {
   transform: translateY(-2px);
 }
 
-/* ===== DETAIL PAGE ===== */
+/* ===== DETAIL PAGE LAYOUTS ===== */
 .detail-hero {
   background: var(--gradient-hero);
   padding: 80px 0 60px;
@@ -829,9 +829,7 @@ footer {
   margin-bottom: 14px;
 }
 
-.detail-content {
-  padding: 60px 0;
-}
+.detail-content { padding: 60px 0; }
 
 .detail-image-main {
   border-radius: 16px;
@@ -877,45 +875,28 @@ footer {
   margin-bottom: 6px;
 }
 
-.info-box-value {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
+.info-box-value { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
 
-/* ===== GALLERY GRID ===== */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.gallery-item {
-  border-radius: 12px;
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  border: 1px solid var(--border);
-  cursor: zoom-in;
-  transition: all 0.3s ease;
-  background: var(--section-alt);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover { box-shadow: var(--shadow-md); }
-.gallery-item:hover img { transform: scale(1.06); }
-
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE BREAKPOINTS ===== */
 @media (max-width: 991px) {
   .hero-contact-pills { display: none; }
   .hero-image-frame { width: 280px; height: 340px; }
   .resume-card { padding: 32px 24px; }
+
+  /* CRITICAL MOBILE NAV OVERLAP FIX */
+  .navbar-collapse {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 15px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 1100;
+  }
+  #hero.page-offset {
+    padding-top: calc(var(--navbar-height) + 20px) !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -944,8 +925,4 @@ footer {
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ===== ACTIVE NAV HIGHLIGHT ===== */
-.nav-link.active-section {
-  color: var(--accent) !important;
-  background: var(--accent-light);
-}
+.nav-link.active-section { color: var(--accent) !important; background: var(--accent-light); }
